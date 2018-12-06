@@ -7,12 +7,14 @@
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/style/main.css">
+		<link rel="stylesheet" type="text/css" href="assets/style/main.css">
 
 		<!-- Javascript links to bootstrap -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 	</head>
 
 	<body>
@@ -24,13 +26,13 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+					<li class="nav-item">
+						<a class="nav-link" href="home.html">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="myRecipes.html">My Recipes</a>
-					</li>
-					<li class="nav-item active">
+						<a class="nav-link" href="myRecipes.html">My Recipes<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
 						<a class="nav-link" href="deleteUser.html">Delete User<span class="sr-only">(current)</span></a>
 					</li>
 				</ul>
@@ -57,8 +59,6 @@
 										<input type="password" name="pwd" value="blah1234"></br>
 										Email:</br>
 										<input type="text" name="email" value="blah1234@blah.com">
-										
-									
 									</div>
 									<div class="modal-footer">
 										<!-- add functionality to save to database -->
@@ -70,78 +70,21 @@
 						</div>
 					</div>
 			</div>
-			
-		</nav>
+        </nav>
 
-		<!-- this info will be retrieved from the api ajax call,
-		done with javascript -->
-		<!-- have to loop through all the recipes t -->
-		<div class="row">
-			<!-- THIS CODE CAN BE DELETED WHEN PHP IS WORKING -->
-			<div class="col">
-				<div class="card card-block h-100 align-items-center">
-					<!-- recipe.name -->
-					<div id="recipeName"></div>
-					<h3>Recipe</h3>
-					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-					More Info
-					</button>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select a User to Delete:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
 
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<!-- recipe.name -->
-									<div id="recipeName" class="modal-title" id="exampleModalLabel"></div>
-									<h5 class="modal-title" id="exampleModalLabel">Recipe Name</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<h3>Ingredients</h3>
-									<!-- loop through in ingredients to make a table -->
-									<table class="table">
-										<tr>
-											<th>Name</th>
-											<th>Price</th>
-										</tr>
-										<tr>
-											<td>Blah</td>
-											<td>Blah</td>
-										</tr>
-										<tr>
-											<td>Blah</td>
-											<td>Blah</td>
-										</tr>
-										<tr>
-											<td>Blah</td>
-											<td>Blah</td>
-										</tr>
-									</table>
-									<!-- add the price and save as a variable and print out -->
-									<p>Total price: $3,000</p>
-
-									<h3>Instructions</h3>
-									<!-- loop throught the instructions and spit out list -->
-									<ol>
-										<li>blah</li>
-										<li>blah</li>
-									</ol>
-								</div>
-								<div class="modal-footer">
-									<!-- add functionality to save to database -->
-									<button type="button" class="btn btn-primary">Save to My Recipes</button>
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</body>
+    </body>
 </html>
